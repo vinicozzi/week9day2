@@ -2,8 +2,8 @@
 // import View from "./ttt-view.js";
 // import Game from "./game.js";
 
-// import View from './ttt-view/view.js';
-// import Game from './ttt_node/game.js';
+import View from './ttt-view.js';
+import Game from '../ttt_node/game.js';
 
 // import View from './ttt-view.js';
 // import Game from './game.js';
