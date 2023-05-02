@@ -12,5 +12,7 @@ import Game from '../ttt_node/game.js';
 document.addEventListener("DOMContentLoaded", () => {
   // Your code here
   const game = new Game();
-  const view = new View();
+  const el = document.querySelector(".ttt");
+  new View(game, el);
 });
+
