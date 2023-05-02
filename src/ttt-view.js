@@ -17,18 +17,56 @@ class View {
       }
     }
     this.el.appendChild(grid);
-    this.el.addEventListener('click', this.handleClick)
+    this.el.addEventListener('click', this.handleClick.bind(this))
   }
 
+  // handleClick(e) {
+  //   const cell = e.target;
+  //   const value = cell.value;
+  //   const mark = { value: value }
+  //   localStorage.setItem("mark", JSON.stringify(mark))
+  // }
   handleClick(e) {
-    debugger 
+    // const cell = e.target;
+    // const value = cell.value;
+    // debugger
+    // const mark = 'X'
+    // debugger
+    // localStorage.setItem("mark", JSON.stringify(mark));
+    const cell = e.target;
+    if (cell.tagName === 'LI') { // Only handle clicks on the grid cells
+      const mark = this.game.currentPlayer
+      cell.innerText = mark;
+      // this.makeMove(mark);
+      while (!this.game.isOver()) {
+        this.game.swapTurn();
+        // this.game.playMove(mark);
+        // this.handleGameOver();
+      }
+    }
+    // this.handleGameOver();
   }
+
+  // e.preventDefault()
+
+  //   let inputEl = document.querySelector("input[name='add-grocery']") // input element
+  //   let value = inputEl.value // banana
+
+  //   const item = { value: value } // { value: banana }
+  //   lsItems.push(item)
+  //   localStorage.setItem("items", JSON.stringify(lsItems))
+
+  //   updateList();
+
+  //   groceryForm.reset()
 
   makeMove(square) {
-    this.game.playMove;
+    this.game.playMove(square);
+    
   }
   
   handleGameOver() {
+    alert("You Lose!")
   }
 }
 
